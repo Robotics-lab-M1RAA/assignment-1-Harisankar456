@@ -1,0 +1,46 @@
+ROS nodes: Launch ROS core and carry out the following tasks
+(a) List the currently running nodes
+    		/rosout
+(b) What is the purpose of node /rosout
+    		to get output
+(c) List the currently running topics
+		/rosout
+		/rosout_agg
+(d) What topics are subscribed by the node /rosout
+  		  /rosout [unknown type]
+(e) What topics are published by the node /rosout
+     		 /rosout_agg [rosgraph_msgs/Log]
+(f) What are the services provided by the node /rosout
+		 * /rosout/get_loggers
+ 		* /rosout/set_logger_level
+(g) Kill the node /rosout and again list the running nodes. What is your observation.
+		/rosout regenerates after being killed
+(h) What are the functions of commands cleanup, info, kill, list, machine &
+ping of the rosnode command-line tool 
+         rosnode ping    test connectivity to node
+        rosnode list    list active nodes
+        rosnode info    print information about node
+        rosnode machine list nodes running on a particular machine or list machines
+        rosnode kill    kill a running node
+        rosnode cleanup purge registration information of unreachable nodes
+
+(2d)		 here all the nodes are publisher nodes and no subscribers ,so the output generated is directly passed on to the ros
+
+(3b) 		the node hari_node 1 is communicating directly with /rosout and the subscribed node RAA 24 subnode
+(4a)/M1RAA_2024
+    /CET 
+    /Hari 
+    /rosout
+(4b) /hello_class
+    /hello_college
+    /welcome
+    /rosout
+    /rosout_agg
+    
+(4c)  rosout provides output for all the running nodes
+
+(4d)		 /bin/python3 /home/hari/catkin_ws/src/new_pkg/scripts/class_pub.py
+/home/hari/catkin_ws/src/new_pkg/scripts/class_pub.py:6: UserWarning: 'M1RAA 2024' is not a legal ROS base name. This may cause problems with other ROS tools.
+  rospy.init_node('M1RAA 2024')
+[FATAL] [1729764865.071530]: unable to register service [/M1RAA 2024/get_loggers] with master: ERROR: parameter [service] contains illegal chars
+[FATAL] [1729764865.073068]: unable to register service [/M1RAA 2024/set_logger_level] with master: ERROR: parameter [service] contains illegal chars
